@@ -1,15 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <HeaderView/>
+
+  <div>
+    <router-link to="/src" class="srcbtn">src</router-link>
+    <router-link to="/" class="srcbtn">main</router-link>
+  </div>
+
+  <router-view/>
+
+  <FooterView/>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+/* eslint-disable */
+import HeaderView from './components/HeaderView.vue';
+import FooterView from './components/FooterView.vue';
+import MainView from './components/MainView.vue';
+import MainSrcView from './components/MainSrcView.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderView,
+    FooterView,
+    MainView,
+    MainSrcView
   }
 }
 </script>
@@ -22,5 +38,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.srcbtn{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
 }
 </style>
